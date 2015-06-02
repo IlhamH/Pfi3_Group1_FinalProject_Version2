@@ -29,10 +29,10 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     public static Firebase ref = new Firebase(Constants.FIREBASE_URL);
 
 
-    TextView tvWater;
-    TextView tvAir;
-    TextView tvSun;
-    TextView tvTotalScore;
+    //TextView tvWater;
+    //TextView tvAir;
+    //TextView tvSun;
+    public static TextView tvTotalScore;
 
     public GameFragment() {
         // Required empty public constructor
@@ -45,10 +45,11 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_game, container, false);
 
-        tvAir = (TextView) v.findViewById(R.id.textViewAirScore);
-        tvWater = (TextView)v.findViewById(R.id.textViewWaterScore);
-        tvSun = (TextView)v.findViewById(R.id.textViewSunScore);
+        //tvAir = (TextView) v.findViewById(R.id.textViewAirScore);
+        //tvWater = (TextView)v.findViewById(R.id.textViewWaterScore);
+        //tvSun = (TextView)v.findViewById(R.id.textViewSunScore);
         tvTotalScore = (TextView)v.findViewById(R.id.textViewScore);
+        tvTotalScore.setText(String.valueOf(UserData.totalScore));
 
         Button scanButton = (Button) v.findViewById(R.id.scanButton);
         Button inventoryButton = (Button) v.findViewById(R.id.inventory_button);
@@ -107,10 +108,10 @@ public class GameFragment extends Fragment implements View.OnClickListener {
 
     public void showFoundTreasure(){
         if(myTreasure.equals("1")) {
-            UserData.waterScore = UserData.waterScore + 1;
-            System.out.println(String.valueOf(UserData.waterScore));
-            tvWater.setText(String.valueOf(UserData.waterScore));
-            updateTotalScore();
+            //UserData.waterScore = UserData.waterScore + 1;
+            //System.out.println(String.valueOf(UserData.waterScore));
+            //tvWater.setText(String.valueOf(UserData.waterScore));
+
 
 
             addTreasureToInventory("1");
@@ -120,9 +121,9 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         }
 
         if(myTreasure.equals("2")){
-            UserData.airScore = UserData.airScore + 1;
-            tvAir.setText(String.valueOf(UserData.airScore));
-            updateTotalScore();
+            //UserData.airScore = UserData.airScore + 1;
+            //tvAir.setText(String.valueOf(UserData.airScore));
+
 
             addTreasureToInventory("2");
 
@@ -131,9 +132,9 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         }
 
         if(myTreasure.equals("3")){
-            UserData.sunScore = UserData.sunScore + 1;
-            tvSun.setText(String.valueOf(UserData.sunScore));
-            updateTotalScore();
+            //UserData.sunScore = UserData.sunScore + 1;
+            //tvSun.setText(String.valueOf(UserData.sunScore));
+
 
             addTreasureToInventory("3");
 
@@ -146,10 +147,6 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public void updateTotalScore(){
-        UserData.totalScore = UserData.airScore + UserData.waterScore + UserData.sunScore;
-        tvTotalScore.setText(String.valueOf(UserData.totalScore));
-    }
 
     public void addTreasureToInventory(String treasureIn){
         for(int i = 0; i < UserData.inventory.size(); i ++){

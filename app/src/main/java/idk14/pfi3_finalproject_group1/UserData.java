@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class UserData {
 
     public static String username = "";
-    public static int airScore = 0;
-    public static int waterScore = 0;
-    public static int sunScore = 0;
-    public static int totalScore;
+    //public static int airScore = 0;
+    //public static int waterScore = 0;
+    //public static int sunScore = 0;
+    public static int totalScore = 0;
     public static ArrayList<String> inventory;
 
 }

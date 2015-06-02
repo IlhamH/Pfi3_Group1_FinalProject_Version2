@@ -2,6 +2,8 @@ package idk14.pfi3_finalproject_group1;
 
 
 import android.app.DialogFragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -23,10 +25,11 @@ import com.firebase.client.Firebase;
 public class TreasureDialog extends DialogFragment implements View.OnClickListener {
     public Button scanButton;
     public String treasureValue;
-    public TextView treasureText;
+    //public TextView treasureText;
     public String scanContent;
     public TextView desText;
     public ImageView treasureImage;
+    public Button backButton;
 
     public TreasureDialog() {
         // Required empty public constructor
@@ -41,32 +44,39 @@ public class TreasureDialog extends DialogFragment implements View.OnClickListen
 
         treasureValue = (String) getArguments().getSerializable("treasure");
 
-         scanButton = (Button) view.findViewById(R.id.scan_button);
+        scanButton = (Button) view.findViewById(R.id.scan_button);
+        backButton = (Button) view.findViewById(R.id.back_to_game_button);
 
-        treasureText = (TextView) view.findViewById(R.id.treasureText);
+        //treasureText = (TextView) view.findViewById(R.id.treasureText);
         desText = (TextView) view.findViewById(R.id.treasureDescription);
 
         treasureImage = (ImageView) view.findViewById(R.id.treasureImage);
 
         if(treasureValue.equals("1")){
-            treasureText.setText("You Found Water");
+            //treasureText.setText("Water");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_water));
+
+            getDialog().setTitle("Water");
 
         }
         if(treasureValue.equals("2")){
-            treasureText.setText("You Found Air");
+            //treasureText.setText("Air");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_air));
+
+            getDialog().setTitle("Air");
 
         }
         if(treasureValue.equals("3")){
-            treasureText.setText("You Found Sun");
+            //treasureText.setText("Sun");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_sun));
+
+            getDialog().setTitle("Sun");
 
         }
         if(treasureValue.equals("0")){
-            treasureText.setText("Nothing here!");
+            desText.setText("Nothing here!\nGo find treasure to fill here.");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_empty));
-            desText.setVisibility(View.INVISIBLE);
+            //desText.setVisibility(View.INVISIBLE);
             scanButton.setVisibility(View.GONE);
 
 
@@ -74,6 +84,7 @@ public class TreasureDialog extends DialogFragment implements View.OnClickListen
         }
 
         scanButton.setOnClickListener(this);
+        backButton.setOnClickListener(this);
 
 
         getDialog().setCanceledOnTouchOutside(true);
@@ -89,6 +100,12 @@ public class TreasureDialog extends DialogFragment implements View.OnClickListen
         if (view.getId() == R.id.scan_button) {
             IntentIntegrator scanIntegrator = new IntentIntegrator(this);
             scanIntegrator.initiateScan();
+        }
+        if (view.getId() == R.id.back_to_game_button){
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.main_layout, new GameFragment());
+            ft.commit();
         }
     }
 
@@ -108,7 +125,7 @@ public class TreasureDialog extends DialogFragment implements View.OnClickListen
 
             }else{
                 System.out.println("This is not the tree");
-                treasureText.setText("Bring your treasure back to the tree!");
+                desText.setText("Bring your treasure back to the tree!");
 
             }
 
@@ -123,18 +140,36 @@ public class TreasureDialog extends DialogFragment implements View.OnClickListen
 
         lightCueRef.setValue(Integer.parseInt(treasureValue));
 
-        System.out.println("You got a light show!");
-        treasureText.setText("You got a light show!");
-        treasureImage.setVisibility(View.INVISIBLE);
-        desText.setVisibility(View.GONE);
+        System.out.println("You got a light show.");
+
+        //update text and images:
+
+        desText.setText("Look up! You got a light show!");
+        treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_plus_one));
+        //desText.setVisibility(View.GONE);
         scanButton.setVisibility(View.GONE);
-
-
+        backButton.setVisibility(View.VISIBLE);
 
         //remove the item that has been delivered from the arraylist
         UserData.inventory.remove(InventoryFragment.selectedTreasure);
         //add an empty element to the end of the list
         UserData.inventory.add("0");
+
+        updateTotalScore();
+    }
+
+    public void updateTotalScore(){
+        UserData.totalScore += 1;
+        GameFragment.tvTotalScore.setText(String.valueOf(UserData.totalScore));
+        System.out.println("Total score updated to: " + UserData.totalScore);
+
+    }
+
+    public void goToGameFragment(View view){
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.main_layout, new GameFragment());
+        ft.commit();
     }
 
 

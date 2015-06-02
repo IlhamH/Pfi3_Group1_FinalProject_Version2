@@ -7,5 +7,5 @@
     android:layout_width="50dp"
     android:layout_height="50dp"
     android:id="@+id/iv_treasurePic"
-    android:src="@drawable/sadface" />
+    android:src="@drawable/grid_empty" />
 
