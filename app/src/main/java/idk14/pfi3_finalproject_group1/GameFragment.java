@@ -163,7 +163,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                 System.out.println("Treasure added to inventory of type: " + treasureIn);
 
                 UserData.totalTreasuresInInventory += 1;
-                inventoryButton.setText("Inventory(" + UserData.totalTreasuresInInventory + ")");
+                inventoryButton.setText("Inventory (" + UserData.totalTreasuresInInventory + ")");
                 break;
             }
         }
