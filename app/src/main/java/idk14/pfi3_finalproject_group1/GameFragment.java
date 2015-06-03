@@ -33,6 +33,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     //TextView tvAir;
     //TextView tvSun;
     public static TextView tvTotalScore;
+    public Button inventoryButton;
 
     public GameFragment() {
         // Required empty public constructor
@@ -52,7 +53,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         tvTotalScore.setText(String.valueOf(UserData.totalScore));
 
         Button scanButton = (Button) v.findViewById(R.id.scanButton);
-        Button inventoryButton = (Button) v.findViewById(R.id.inventory_button);
+        inventoryButton = (Button) v.findViewById(R.id.inventory_button);
         inventoryButton.setOnClickListener(this);
         scanButton.setOnClickListener(this);
 
@@ -151,8 +152,11 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     public void addTreasureToInventory(String treasureIn){
         for(int i = 0; i < UserData.inventory.size(); i ++){
             if(UserData.inventory.get(i).equals("0")){
+
                 UserData.inventory.set(i, treasureIn);
                 System.out.println("Treasure added to inventory of type: " + treasureIn);
+
+                inventoryButton.setText("Inventory(" + i + ")");
                 break;
             }
         }
