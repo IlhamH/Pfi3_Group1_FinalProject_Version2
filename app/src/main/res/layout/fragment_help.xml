@@ -31,7 +31,7 @@
         android:src= "@drawable/logoo"
       />
 
-    <TextView
+        <idk14.pfi3_finalproject_group1.MyFonts
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"

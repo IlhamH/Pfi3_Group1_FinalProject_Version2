@@ -4,7 +4,7 @@
     tools:context="idk14.pfi3_finalproject_group1.TreasureDialog"
     android:background="#fff">
 
-    <TextView
+    <idk14.pfi3_finalproject_group1.MyFonts
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
