@@ -155,13 +155,17 @@ public class GameFragment extends Fragment implements View.OnClickListener {
 
             FragmentManager fm = getFragmentManager();
             SunFragment sf = new SunFragment();
-            sf.show(fm, "Water");
+            sf.show(fm, "Sun");
 
             //Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found sun!", Toast.LENGTH_SHORT).show();
 
         }
         if(myTreasure.equals("0")){
-            Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found nothing!", Toast.LENGTH_LONG).show();
+
+            FragmentManager fm = getFragmentManager();
+            EmptyFragment ef = new EmptyFragment();
+            ef.show(fm, "Empty");
+            //Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found nothing!", Toast.LENGTH_LONG).show();
 
         }
     }
