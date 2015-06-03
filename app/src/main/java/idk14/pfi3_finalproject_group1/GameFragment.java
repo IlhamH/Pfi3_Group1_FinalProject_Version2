@@ -123,8 +123,12 @@ public class GameFragment extends Fragment implements View.OnClickListener {
 
             addTreasureToInventory("1");
 
+            FragmentManager fm = getFragmentManager();
+            WaterFragment wf = new WaterFragment();
+            wf.show(fm, "Water");
 
-            Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found water!", Toast.LENGTH_SHORT).show();
+
+            //Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found water!", Toast.LENGTH_SHORT).show();
         }
 
         if(myTreasure.equals("2")){
@@ -134,7 +138,11 @@ public class GameFragment extends Fragment implements View.OnClickListener {
 
             addTreasureToInventory("2");
 
-            Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found air!", Toast.LENGTH_SHORT).show();
+            FragmentManager fm = getFragmentManager();
+            AirFragment af = new AirFragment();
+            af.show(fm, "Air");
+
+            //Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found air!", Toast.LENGTH_SHORT).show();
 
         }
 
@@ -145,11 +153,15 @@ public class GameFragment extends Fragment implements View.OnClickListener {
 
             addTreasureToInventory("3");
 
-            Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found sun!", Toast.LENGTH_SHORT).show();
+            FragmentManager fm = getFragmentManager();
+            SunFragment sf = new SunFragment();
+            sf.show(fm, "Water");
+
+            //Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found sun!", Toast.LENGTH_SHORT).show();
 
         }
         if(myTreasure.equals("0")){
-            Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found nothing!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found nothing!", Toast.LENGTH_LONG).show();
 
         }
     }
