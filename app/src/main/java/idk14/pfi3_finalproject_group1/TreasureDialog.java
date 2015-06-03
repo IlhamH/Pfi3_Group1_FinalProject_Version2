@@ -145,7 +145,7 @@ public class TreasureDialog extends DialogFragment implements View.OnClickListen
         //update text and images:
 
         desText.setText("Look up! You got a light show!");
-        treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_plus_one));
+        treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.sadface));
         //desText.setVisibility(View.GONE);
         scanButton.setVisibility(View.GONE);
         backButton.setVisibility(View.VISIBLE);
