@@ -49,11 +49,17 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         //tvAir = (TextView) v.findViewById(R.id.textViewAirScore);
         //tvWater = (TextView)v.findViewById(R.id.textViewWaterScore);
         //tvSun = (TextView)v.findViewById(R.id.textViewSunScore);
+
         tvTotalScore = (TextView)v.findViewById(R.id.textViewScore);
         tvTotalScore.setText(String.valueOf(UserData.totalScore));
 
         Button scanButton = (Button) v.findViewById(R.id.scanButton);
         inventoryButton = (Button) v.findViewById(R.id.inventory_button);
+
+        if(UserData.totalTreasuresInInventory != 0){
+            inventoryButton.setText("Inventory(" + UserData.totalTreasuresInInventory + ")");
+        }
+
         inventoryButton.setOnClickListener(this);
         scanButton.setOnClickListener(this);
 
@@ -156,7 +162,8 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                 UserData.inventory.set(i, treasureIn);
                 System.out.println("Treasure added to inventory of type: " + treasureIn);
 
-                inventoryButton.setText("Inventory(" + i + ")");
+                UserData.totalTreasuresInInventory += 1;
+                inventoryButton.setText("Inventory(" + UserData.totalTreasuresInInventory + ")");
                 break;
             }
         }

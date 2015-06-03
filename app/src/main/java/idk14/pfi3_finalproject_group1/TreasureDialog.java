@@ -1,7 +1,7 @@
 package idk14.pfi3_finalproject_group1;
 
 
-import android.app.DialogFragment;
+
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
@@ -130,7 +130,7 @@ public class TreasureDialog extends Fragment implements View.OnClickListener {
 
     public void updateLightCue(){
 
-        Firebase lightCueRef = StartFragment.ref.child("LightCue");
+        Firebase lightCueRef = GameFragment.ref.child("LightCue");
 
         lightCueRef.setValue(Integer.parseInt(treasureValue));
 
@@ -148,6 +148,8 @@ public class TreasureDialog extends Fragment implements View.OnClickListener {
         UserData.inventory.remove(InventoryFragment.selectedTreasure);
         //add an empty element to the end of the list
         UserData.inventory.add("0");
+        //remove one from int totalTreasuresInInventory
+        UserData.totalTreasuresInInventory -= 1;
 
         updateTotalScore();
     }
