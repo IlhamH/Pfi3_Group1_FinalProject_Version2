@@ -39,6 +39,8 @@ public class InventoryFragment extends Fragment {
         GridView gridView = (GridView) view.findViewById(R.id.gridView);
         gridView.setAdapter(myImageAdapter);
 
+        //This opens up the treasure fragment with the bundle of value data
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

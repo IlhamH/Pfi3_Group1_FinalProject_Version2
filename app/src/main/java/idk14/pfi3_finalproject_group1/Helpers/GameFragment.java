@@ -38,11 +38,6 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     public static String myTreasure;
     public static String scanContent;
     public static Firebase ref = new Firebase(Constants.FIREBASE_URL);
-
-
-    //TextView tvWater;
-    //TextView tvAir;
-    //TextView tvSun;
     public static TextView tvTotalScore;
     public Button inventoryButton;
 
@@ -56,10 +51,6 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_game, container, false);
-
-        //tvAir = (TextView) v.findViewById(R.id.textViewAirScore);
-        //tvWater = (TextView)v.findViewById(R.id.textViewWaterScore);
-        //tvSun = (TextView)v.findViewById(R.id.textViewSunScore);
 
         tvTotalScore = (TextView)v.findViewById(R.id.textViewScore);
         tvTotalScore.setText(String.valueOf(UserData.totalScore));
@@ -108,16 +99,14 @@ public class GameFragment extends Fragment implements View.OnClickListener {
             if(scanContent.equals("TREE")){
                 System.out.println("You scanned Bloom!");
 
+                // If you scan Bloom and you have no treasure - toast
                 if(UserData.inventory.get(0).equals("0")) {
-                    Toast.makeText(getActivity(), "You scanned Bloom! Go get a treasure first!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "You scanned Bloom! Go get a treasure first!", Toast.LENGTH_LONG).show();
                 }
-
-
 
             }else{
                 checkFirebase();
             }
-
 
         } else {
             Toast.makeText(getActivity(), "No scan data received!", Toast.LENGTH_SHORT).show();
@@ -125,70 +114,55 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     }
 
     public void showFoundTreasure(){
+        // If you get Water treasure
         if(myTreasure.equals("1")) {
-            //UserData.waterScore = UserData.waterScore + 1;
-            //System.out.println(String.valueOf(UserData.waterScore));
-            //tvWater.setText(String.valueOf(UserData.waterScore));
 
-
-
-            addTreasureToInventory("1");
+          addTreasureToInventory("1");
 
             FragmentManager fm = getFragmentManager();
             WaterFragment wf = new WaterFragment();
             wf.show(fm, "Water");
-
-
-            //Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found water!", Toast.LENGTH_SHORT).show();
         }
 
+        // If you get Air treasure
         if(myTreasure.equals("2")){
-            //UserData.airScore = UserData.airScore + 1;
-            //tvAir.setText(String.valueOf(UserData.airScore));
-
-
             addTreasureToInventory("2");
 
             FragmentManager fm = getFragmentManager();
             AirFragment af = new AirFragment();
             af.show(fm, "Air");
 
-            //Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found air!", Toast.LENGTH_SHORT).show();
 
         }
-
+        // If you get Sun treasure
         if(myTreasure.equals("3")){
-            //UserData.sunScore = UserData.sunScore + 1;
-            //tvSun.setText(String.valueOf(UserData.sunScore));
-
-
             addTreasureToInventory("3");
 
             FragmentManager fm = getFragmentManager();
             SunFragment sf = new SunFragment();
             sf.show(fm, "Sun");
-
-            //Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found sun!", Toast.LENGTH_SHORT).show();
-
         }
+
+        // If you scan inactive treasure QR
         if(myTreasure.equals("0")){
 
             FragmentManager fm = getFragmentManager();
             EmptyFragment ef = new EmptyFragment();
             ef.show(fm, "Empty");
-            //Toast.makeText(getActivity(), "Hey " + UserData.username + "! You found nothing!", Toast.LENGTH_LONG).show();
-
         }
     }
 
 
     public void addTreasureToInventory(String treasureIn){
+        //loops through inventory, finds first 0 element (no treasure)
         for(int i = 0; i < UserData.inventory.size(); i ++){
             if(UserData.inventory.get(i).equals("0")){
 
+                //sets first empty element too incoming treasure value
                 UserData.inventory.set(i, treasureIn);
                 System.out.println("Treasure added to inventory of type: " + treasureIn);
 
+                // Inventory button - counts how many treasure there is in the inventory
                 UserData.totalTreasuresInInventory += 1;
                 inventoryButton.setText("Inventory (" + UserData.totalTreasuresInInventory + ")");
                 break;
@@ -201,8 +175,6 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     //Firebase methods
 
     public void checkFirebase() {
-
-
         Firebase treasureRef = ref.child(scanContent);
 
 
@@ -259,7 +231,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                     System.out.println("connected");
                 } else {
                     System.out.println("not connected");
-                    Toast.makeText(getActivity(), "No network connection", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "No network connection", Toast.LENGTH_LONG).show();
 
 
                 }

@@ -43,9 +43,6 @@ public class ImageAdapter extends ArrayAdapter<String> {
 
         ImageView iv = (ImageView) convertView.findViewById(R.id.iv_treasurePic);
 
-        //TextView tv = (TextView) convertView.findViewById(R.id.iv_planetname);
-
-        //tv.setText(p.getName());
         if(treasure == "1"){
             iv.setImageResource(R.drawable.grid_water);
         }

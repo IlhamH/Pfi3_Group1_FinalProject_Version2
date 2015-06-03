@@ -76,7 +76,6 @@
         android:paddingLeft="20dp"
         android:layout_gravity="center"
         android:visibility="invisible"
-        android:onClick="goToGameFragment"
 
         android:text="Continue Playing"
         android:id="@+id/back_to_game_button"

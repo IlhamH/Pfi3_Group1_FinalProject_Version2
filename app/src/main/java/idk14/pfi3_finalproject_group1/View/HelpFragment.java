@@ -41,12 +41,6 @@ public class HelpFragment extends Fragment implements View.OnClickListener {
         Ion.with(gif).load("http://i.imgur.com/Go8Mo6Q.gif?1");
         b.setOnClickListener(this);
 
-/*
-        ImageView gif = (ImageView) v.findViewById(R.id.TestGif);
-        Ion.with(gif).load("http://i.imgur.com/QS5wdwy.gif?1");
-        b.setOnClickListener(this);
-*/
-
         return v;
     }
 

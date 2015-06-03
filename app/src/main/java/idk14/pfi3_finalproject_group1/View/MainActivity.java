@@ -24,7 +24,7 @@ import idk14.pfi3_finalproject_group1.R;
 
 public class MainActivity extends ActionBarActivity {
     private static long back_pressed;
-    public static MediaPlayer treasureSound;
+    //public static MediaPlayer treasureSound;
 
 
 
@@ -32,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        treasureSound = MediaPlayer.create(this, R.raw.sun);
+        //treasureSound = MediaPlayer.create(this, R.raw.sun);
 
         Firebase.setAndroidContext(this);
 
@@ -44,12 +44,12 @@ public class MainActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_main);
 
+        //Opens the welcome fragment and then helpfragment for first time users
+        //Otherwise you go straight to GameFragment
+
         final String PREFS_NAME = "MyPrefsFile";
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-
-
-        // START THE HELP FRAGMENT FOR FIRST TIME USERS
 
         if (settings.getBoolean("my_first_time", true)) {
             //the app is being launched for first time, do something
@@ -98,24 +98,6 @@ public class MainActivity extends ActionBarActivity {
             ft.commit();
             return false;
         }
-/*            if(id==R.id.Map){
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.add(R.id.main_layout, new MapFragment(),"map");
-                ft.addToBackStack("map");
-                ft.commit();
-                return false;
-            }*/
-/*
-            if(id==R.id.Help){
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.main_layout, new HelpFragment(),"help");
-                ft.addToBackStack("help");
-                ft.commit();
-                return false;
-        }*/
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -141,24 +123,3 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 }
-
-
-
-
-            //Click the back button twice -> AlertDialog
-        /*} else if (getFragmentManager().getBackStackEntryCount() <1){
-            new AlertDialog.Builder(this)
-                    .setTitle("Exit")
-                    .setMessage("Do you want to exit?")
-                    .setNegativeButton(android.R.string.no, null)
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-
-                        public void onClick(DialogInterface arg0, int arg1) {
-                            MainActivity.super.onBackPressed();
-                        }
-                    }).create().show();
-        } else {
-            super.onBackPressed();
-        }
-    }
-}*/

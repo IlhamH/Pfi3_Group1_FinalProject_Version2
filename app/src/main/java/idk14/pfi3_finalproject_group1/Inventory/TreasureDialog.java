@@ -80,10 +80,7 @@ public class TreasureDialog extends Fragment implements View.OnClickListener {
             treasureText.setText("Nothing here!");
             desText.setText("Go find treasure to fill here.");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_empty));
-            //desText.setVisibility(View.INVISIBLE);
             scanButton.setVisibility(View.GONE);
-
-
 
         }
 
@@ -115,8 +112,6 @@ public class TreasureDialog extends Fragment implements View.OnClickListener {
         if (scanningResult != null && resultCode != 0 && intent != null) {
 
             scanContent = scanningResult.getContents();
-            //String scanFormat = scanningResult.getFormatName();
-            //contentTxt.setText("CONTENT: " + scanContent);
             System.out.println("content: " + scanContent);
 
             if(scanContent.equals("TREE")){
@@ -147,7 +142,6 @@ public class TreasureDialog extends Fragment implements View.OnClickListener {
 
         desText.setText("Look up! You got a light show!");
         treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_one_point));
-        //desText.setVisibility(View.GONE);
         scanButton.setVisibility(View.GONE);
         backButton.setVisibility(View.VISIBLE);
 
@@ -168,13 +162,13 @@ public class TreasureDialog extends Fragment implements View.OnClickListener {
 
     }
 
-    public void goToGameFragment(View view){
+   /* public void goToGameFragment(View view){
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.main_layout, new GameFragment());
         ft.commit();
     }
 
-
+*/
 }
 
