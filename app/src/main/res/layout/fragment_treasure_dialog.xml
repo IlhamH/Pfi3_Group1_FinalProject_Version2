@@ -1,12 +1,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="idk14.pfi3_finalproject_group1.TreasureDialog">
+    tools:context="idk14.pfi3_finalproject_group1.TreasureDialog"
+    android:background="#fff">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="50dp"
 
         android:hint="You found water"
@@ -14,6 +16,7 @@
         android:textSize="30sp"
         android:id="@+id/treasureText"
         android:textColor="#ff7e8ab9"
+        android:textStyle="bold"
         android:layout_centerHorizontal="true" />
 
 
@@ -34,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+        android:layout_centerHorizontal="true"
 
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/treasure_description"
@@ -41,7 +45,6 @@
         android:id="@+id/treasureDescription"
         android:textColor="#ff7e8ab9"
         android:layout_below="@+id/treasureImage"
-        android:layout_alignParentStart="true"
         android:layout_marginTop="42dp" />
 
     <Button
@@ -75,7 +78,7 @@
         android:visibility="invisible"
         android:onClick="goToGameFragment"
 
-        android:text="Play on!"
+        android:text="Continue Playing"
         android:id="@+id/back_to_game_button"
 
         android:textColor="#fff"
@@ -86,9 +89,9 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_above="@+id/scan_button"
+        android:layout_below="@+id/treasureDescription"
         android:layout_centerHorizontal="true"
-        android:nestedScrollingEnabled="false" />
+        />
 
 
 </RelativeLayout>

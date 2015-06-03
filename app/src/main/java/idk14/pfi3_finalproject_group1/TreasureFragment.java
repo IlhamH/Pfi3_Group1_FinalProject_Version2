@@ -1,3 +1,4 @@
+/*
 package idk14.pfi3_finalproject_group1;
 
 
@@ -18,9 +19,11 @@ import android.widget.Toast;
 import com.firebase.client.Firebase;
 
 
+*/
 /**
  * A simple {@link Fragment} subclass.
- */
+ *//*
+
 public class TreasureFragment extends Fragment implements View.OnClickListener {
     public String scanContent;
 
@@ -44,24 +47,24 @@ public class TreasureFragment extends Fragment implements View.OnClickListener {
 
         ImageView treasureImage = (ImageView) v.findViewById(R.id.treasureImage);
 
-        if(StartFragment.myTreasure.equals("1")){
+        if(GameFragment.myTreasure.equals("1")){
             treasureText.setText("You Found Water");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.water_icon));
          //    MainActivity.treasureSound.start();
         }
-        if(StartFragment.myTreasure.equals("2")){
+        if(GameFragment.myTreasure.equals("2")){
             treasureText.setText("You Found Air");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.wind_icon));
         //     MainActivity.treasureSound.start();
 
         }
-        if(StartFragment.myTreasure.equals("3")){
+        if(GameFragment.myTreasure.equals("3")){
             treasureText.setText("You Found Sun");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.sun_icon));
         //     MainActivity.treasureSound.start();
 
         }
-        if(StartFragment.myTreasure.equals("0")){
+        if(GameFragment.myTreasure.equals("0")){
             treasureText.setText("You Found Nothing");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.empty_icon));
 
@@ -125,3 +128,4 @@ public class TreasureFragment extends Fragment implements View.OnClickListener {
 
 
 }
+*/
