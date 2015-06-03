@@ -16,7 +16,7 @@
 
 
     <!-- Empty spot Screen -->
-    <string name="empty_message">You found empty treasure! \n Look at the big screen to find active QR-codes to scan.</string>
+    <string name="empty_message">This treasure spot was empty! \n Look at the big screen to find active QR-codes to scan.</string>
 
 
     <string name="treasure_description"> Deliver your found treasure by scanning Bloom´s QR-code</string>
