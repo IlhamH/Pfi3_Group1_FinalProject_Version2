@@ -71,7 +71,8 @@ public class TreasureDialog extends Fragment implements View.OnClickListener {
 
         }
         if(treasureValue.equals("0")){
-            desText.setText("Nothing here!\nGo find treasure to fill here.");
+            treasureText.setText("Nothing here!");
+            desText.setText("Go find treasure to fill here.");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_empty));
             //desText.setVisibility(View.INVISIBLE);
             scanButton.setVisibility(View.GONE);
