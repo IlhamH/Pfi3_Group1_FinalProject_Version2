@@ -140,7 +140,7 @@ public class TreasureDialog extends Fragment implements View.OnClickListener {
         //update text and images:
 
         desText.setText("Look up! You got a light show!");
-        treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_plus_one));
+        treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_one_point));
         //desText.setVisibility(View.GONE);
         scanButton.setVisibility(View.GONE);
         backButton.setVisibility(View.VISIBLE);
