@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:animateLayoutChanges="true"
-    tools:context="idk14.pfi3_finalproject_group1.GameFragment"
+    tools:context="idk14.pfi3_finalproject_group1.Helpers.GameFragment"
 
     android:id="@+id/start_layout"
 
     android:background="#fff"
     >
-    <idk14.pfi3_finalproject_group1.MyFonts
+    <idk14.pfi3_finalproject_group1.Helpers.MyFonts
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Score"
@@ -28,7 +28,7 @@
     <View
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:background="@drawable/circle"
+        android:background="@drawable/score_rectangle"
         android:gravity="center_vertical"
         android:layout_below="@+id/textViewScores"
         android:layout_centerHorizontal="true"
@@ -37,7 +37,7 @@
         android:layout_marginBottom="30dp"
         />
 
-    <idk14.pfi3_finalproject_group1.MyFonts
+    <idk14.pfi3_finalproject_group1.Helpers.MyFonts
         android:id="@+id/textViewScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.Inventory;
 
 
 import android.app.FragmentManager;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+
+import idk14.pfi3_finalproject_group1.R;
+import idk14.pfi3_finalproject_group1.Helpers.UserData;
 
 
 /**
@@ -32,7 +35,7 @@ public class InventoryFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_inventory, container, false);
 
-        ImageAdapter myImageAdapter = new ImageAdapter(getActivity(),UserData.inventory);
+        ImageAdapter myImageAdapter = new ImageAdapter(getActivity(), UserData.inventory);
         GridView gridView = (GridView) view.findViewById(R.id.gridView);
         gridView.setAdapter(myImageAdapter);
 

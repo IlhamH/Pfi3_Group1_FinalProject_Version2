@@ -1,11 +1,10 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.Inventory;
 
 
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,6 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
+
+import idk14.pfi3_finalproject_group1.Helpers.GameFragment;
+import idk14.pfi3_finalproject_group1.R;
+import idk14.pfi3_finalproject_group1.Scanner.IntentIntegrator;
+import idk14.pfi3_finalproject_group1.Scanner.IntentResult;
+import idk14.pfi3_finalproject_group1.Helpers.UserData;
 
 
 /**

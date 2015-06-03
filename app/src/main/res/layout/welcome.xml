@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="idk14.pfi3_finalproject_group1.WelcomeFragment"
+    tools:context="idk14.pfi3_finalproject_group1.View.WelcomeFragment"
     android:background="#fff"
     >
 
@@ -11,7 +11,7 @@
         android:layout_gravity="center"
 
         android:id="@+id/imageView"
-        android:src="@drawable/logoo"
+        android:src="@drawable/logo"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 

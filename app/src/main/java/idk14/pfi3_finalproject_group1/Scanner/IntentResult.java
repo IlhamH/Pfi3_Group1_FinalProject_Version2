@@ -1,4 +1,4 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.Scanner;
 
 /**
  * Created by larsy09 on 5/13/15.

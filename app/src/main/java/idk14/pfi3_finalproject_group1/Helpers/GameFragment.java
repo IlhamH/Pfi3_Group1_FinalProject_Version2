@@ -1,4 +1,4 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.Helpers;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -16,6 +16,17 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+
+import idk14.pfi3_finalproject_group1.Helpers.Constants;
+import idk14.pfi3_finalproject_group1.Helpers.UserData;
+import idk14.pfi3_finalproject_group1.Inventory.InventoryFragment;
+import idk14.pfi3_finalproject_group1.R;
+import idk14.pfi3_finalproject_group1.Scanner.IntentIntegrator;
+import idk14.pfi3_finalproject_group1.Scanner.IntentResult;
+import idk14.pfi3_finalproject_group1.TreasureDialogs.AirFragment;
+import idk14.pfi3_finalproject_group1.TreasureDialogs.EmptyFragment;
+import idk14.pfi3_finalproject_group1.TreasureDialogs.SunFragment;
+import idk14.pfi3_finalproject_group1.TreasureDialogs.WaterFragment;
 
 
 /**

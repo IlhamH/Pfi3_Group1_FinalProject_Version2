@@ -1,4 +1,4 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.Helpers;
 
 import java.util.ArrayList;
 

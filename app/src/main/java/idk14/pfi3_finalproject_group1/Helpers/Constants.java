@@ -1,4 +1,4 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.Helpers;
 
 /**
  * Created by lars09 on 5/11/15.....Och nnu mer

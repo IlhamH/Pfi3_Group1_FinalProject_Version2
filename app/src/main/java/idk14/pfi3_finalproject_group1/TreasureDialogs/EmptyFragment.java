@@ -1,4 +1,4 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.TreasureDialogs;
 
 
 import android.app.DialogFragment;
@@ -8,14 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import idk14.pfi3_finalproject_group1.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SunFragment extends DialogFragment implements View.OnClickListener {
+public class EmptyFragment extends DialogFragment implements View.OnClickListener {
 
 
-    public SunFragment() {
+    public EmptyFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +26,7 @@ public class SunFragment extends DialogFragment implements View.OnClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_sun, container, false);
+        View v = inflater.inflate(R.layout.fragment_empty2, container, false);
         v.setOnClickListener(this);
 
         return v;
@@ -32,6 +34,6 @@ public class SunFragment extends DialogFragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        SunFragment.this.dismiss();
+        EmptyFragment.this.dismiss();
     }
 }

@@ -1,9 +1,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="idk14.pfi3_finalproject_group1.WaterFragment">
+    android:background="#fff"
+    tools:context="idk14.pfi3_finalproject_group1.TreasureDialogs.WaterFragment">
 
-    <idk14.pfi3_finalproject_group1.MyFonts
+    <idk14.pfi3_finalproject_group1.Helpers.MyFonts
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

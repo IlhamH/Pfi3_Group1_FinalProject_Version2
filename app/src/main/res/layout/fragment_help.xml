@@ -28,10 +28,10 @@
 
         android:id="@+id/imageView3"
         android:scaleType="fitCenter"
-        android:src= "@drawable/logoo"
+        android:src= "@drawable/logo"
       />
 
-        <idk14.pfi3_finalproject_group1.MyFonts
+        <idk14.pfi3_finalproject_group1.Helpers.MyFonts
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"

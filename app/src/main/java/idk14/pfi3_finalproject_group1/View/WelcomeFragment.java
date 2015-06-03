@@ -1,4 +1,4 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.View;
 
 
 import android.app.FragmentManager;
@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import idk14.pfi3_finalproject_group1.Helpers.UserData;
+import idk14.pfi3_finalproject_group1.R;
+import idk14.pfi3_finalproject_group1.View.HelpFragment;
 
 
 /**

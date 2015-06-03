@@ -1,4 +1,4 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.View;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -16,6 +16,10 @@ import android.widget.Toast;
 import com.firebase.client.Firebase;
 
 import java.util.ArrayList;
+
+import idk14.pfi3_finalproject_group1.Helpers.GameFragment;
+import idk14.pfi3_finalproject_group1.Helpers.UserData;
+import idk14.pfi3_finalproject_group1.R;
 
 
 public class MainActivity extends ActionBarActivity {

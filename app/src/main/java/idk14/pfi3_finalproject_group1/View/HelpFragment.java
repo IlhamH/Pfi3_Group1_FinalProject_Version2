@@ -1,4 +1,4 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.View;
 
 
 import android.app.Fragment;
@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.koushikdutta.ion.Ion;
+
+import idk14.pfi3_finalproject_group1.Helpers.GameFragment;
+import idk14.pfi3_finalproject_group1.R;
 
 
 /**

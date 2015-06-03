@@ -1,4 +1,4 @@
-package idk14.pfi3_finalproject_group1;
+package idk14.pfi3_finalproject_group1.Inventory;
 
 import android.content.Context;
 import android.util.Log;
@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import idk14.pfi3_finalproject_group1.R;
 
 /**
  * Created by larsy09 on 6/1/15.
