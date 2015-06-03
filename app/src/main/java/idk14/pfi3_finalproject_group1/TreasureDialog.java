@@ -22,10 +22,10 @@ import com.firebase.client.Firebase;
  * Created by Lars
  * A simple {@link Fragment} subclass.
  */
-public class TreasureDialog extends DialogFragment implements View.OnClickListener {
+public class TreasureDialog extends Fragment implements View.OnClickListener {
     public Button scanButton;
     public String treasureValue;
-    //public TextView treasureText;
+    public TextView treasureText;
     public String scanContent;
     public TextView desText;
     public ImageView treasureImage;
@@ -47,30 +47,27 @@ public class TreasureDialog extends DialogFragment implements View.OnClickListen
         scanButton = (Button) view.findViewById(R.id.scan_button);
         backButton = (Button) view.findViewById(R.id.back_to_game_button);
 
-        //treasureText = (TextView) view.findViewById(R.id.treasureText);
+        treasureText = (TextView) view.findViewById(R.id.treasureText);
         desText = (TextView) view.findViewById(R.id.treasureDescription);
 
         treasureImage = (ImageView) view.findViewById(R.id.treasureImage);
 
         if(treasureValue.equals("1")){
-            //treasureText.setText("Water");
+            treasureText.setText("Water");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_water));
 
-            getDialog().setTitle("Water");
 
         }
         if(treasureValue.equals("2")){
-            //treasureText.setText("Air");
+            treasureText.setText("Air");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_air));
 
-            getDialog().setTitle("Air");
 
         }
         if(treasureValue.equals("3")){
-            //treasureText.setText("Sun");
+            treasureText.setText("Sun");
             treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_sun));
 
-            getDialog().setTitle("Sun");
 
         }
         if(treasureValue.equals("0")){
@@ -86,9 +83,6 @@ public class TreasureDialog extends DialogFragment implements View.OnClickListen
         scanButton.setOnClickListener(this);
         backButton.setOnClickListener(this);
 
-
-        getDialog().setCanceledOnTouchOutside(true);
-        getDialog().dismiss();
 
         return view;
 
@@ -145,7 +139,7 @@ public class TreasureDialog extends DialogFragment implements View.OnClickListen
         //update text and images:
 
         desText.setText("Look up! You got a light show!");
-        treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.sadface));
+        treasureImage.setImageDrawable(getResources().getDrawable(R.drawable.treasure_plus_one));
         //desText.setVisibility(View.GONE);
         scanButton.setVisibility(View.GONE);
         backButton.setVisibility(View.VISIBLE);

@@ -3,6 +3,19 @@
     android:layout_height="match_parent"
     tools:context="idk14.pfi3_finalproject_group1.TreasureDialog">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+
+        android:hint="You found water"
+
+        android:textSize="30sp"
+        android:id="@+id/treasureText"
+        android:textColor="#ff7e8ab9"
+        android:layout_centerHorizontal="true" />
+
 
     <ImageView
         android:layout_width="200dp"

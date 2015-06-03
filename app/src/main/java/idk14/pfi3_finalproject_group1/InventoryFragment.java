@@ -2,6 +2,7 @@ package idk14.pfi3_finalproject_group1;
 
 
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -40,12 +41,15 @@ public class InventoryFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("FragmentWithList", "Clicked on position: " + position);
                 FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
                 TreasureDialog td = new TreasureDialog();
+                ft.replace(R.id.main_layout, td);
                 Bundle b = new Bundle();
                 b.putSerializable("treasure", UserData.inventory.get(position));
                 selectedTreasure = position;
                 td.setArguments(b);
-                td.show(fm,"Dialog");
+                ft.addToBackStack(null);
+                ft.commit();
 
             }
         });
